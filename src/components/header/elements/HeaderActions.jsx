@@ -64,8 +64,8 @@ const mobileMneuHandler = (data) => {
         </li> */}
         <li className="shopping-cart">
           <button className="cart-dropdown-btn" onClick={() => cartHandler(true)}>
-            <span className="cart-count">{getProducts.cartQuantityTotal}</span>
-            <i className="far fa-shopping-cart" />
+            {/* <span className="cart-count">{getProducts.cartQuantityTotal}</span> */}
+            {/* <i className="far fa-shopping-cart" /> */}
           </button>
         </li>
         {/* <li className="my-account">

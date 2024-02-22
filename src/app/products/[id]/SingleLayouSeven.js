@@ -32,7 +32,7 @@ const SingleLayouSeven = ({ singleData }) => {
                                         <div className="inner">
                                             <h2 className="product-title">{singleData.title}</h2>
                                             <div className="price-amount price-offer-amount">
-                                                <span className="price current-price">${singleData.price}</span>
+                                                <span className="price current-price">₹{singleData.price}</span>
                                             </div>
                                             {/* Start Product Action Wrapper  */}
                                             <div className="product-action-wrapper d-flex-center">

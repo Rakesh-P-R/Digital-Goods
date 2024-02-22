@@ -102,9 +102,9 @@ const Cart = () => {
                                     <button type="submit" className="axil-btn btn-outline">Apply</button>
                                 </div>
                             </div>
-                            <div className="update-btn">
+                            {/* <div className="update-btn">
                                 <button className="axil-btn btn-outline" onClick={() => updateCartHandler()}>Update Cart</button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="row">
                             <div className="col-xl-5 col-lg-7 offset-xl-7 offset-lg-5">

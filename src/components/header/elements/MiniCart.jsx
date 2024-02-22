@@ -25,7 +25,7 @@ return (
       <div className={`cart-dropdown ${getProducts.isMinicartOpen ? "open" : ""}`}>
         <div className="cart-content-wrap">
           <div className="cart-header">
-            <h2 className="header-title">Cart review</h2>
+            <h2 className="header-title">Product Details</h2>
             <button
               className="cart-close sidebar-close"
               onClick={() => cartHandler(false)}
@@ -80,7 +80,7 @@ return (
                 </span>
               </h3>
               <div className="group-btn">
-				<button className="axil-btn btn-bg-primary viewcart-btn" onClick={() => miniCartFooterBtnHandler("/cart")}>View Cart</button>
+				<button className="axil-btn btn-bg-primary viewcart-btn" onClick={() => miniCartFooterBtnHandler("/cart")}>Apply Coupon Code</button>
 				<button className="axil-btn btn-bg-secondary checkout-btn" onClick={() => miniCartFooterBtnHandler("/checkout")}>Checkout</button>
               </div>
             </div>

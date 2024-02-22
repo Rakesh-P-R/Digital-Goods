@@ -32,7 +32,7 @@ const ActionButtons = (props) => {
       {props.wishlistBtn && props.productAction.pCate !== "NFT" && (
         <li className="wishlist">
           <button onClick={() => handleAddToWishlist(props.productAction)}>
-		  <i className={isWishlistAdded.length === 1 ? "fas fa-heart" : "far fa-heart"} />
+		  {/* <i className={isWishlistAdded.length === 1 ? "fas fa-heart" : "far fa-heart"} /> */}
           </button>
         </li>
       )}

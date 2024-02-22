@@ -165,7 +165,7 @@ const ProductQuickView = () => {
                             {getQuickViewItem.title}
                           </h3>
                           <span className="price-amount">
-                            <span className="currency-symbol">$</span>
+                            <span className="currency-symbol">₹</span>
                             {getQuickViewItem.salePrice
                               ? getQuickViewItem.salePrice
                               : getQuickViewItem.price}
