@@ -295,11 +295,30 @@ const Checkout = () => {
                             </div>
                         </form>
                         :
-                        <div className="text-center">
-                                <h4 className="mr-2">Your Refferal Code is:</h4>
-                                <p className="text-blue-500 font-bold">Motive50</p>
-                            <Link href="/shop" className="axil-btn btn-bg-primary">Back to shop</Link>
+                            <div className="text-center">
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', marginBottom: '1rem' }}>
+                                    <h4 style={{ margin: '0.5rem 0' }}>Your Referral Code is</h4>
+                                    <p style={{ color: '#1E40AF', fontWeight: 'bold', marginTop: '-5px' }}>Motive50</p>
+                                </div>
+
+                                <div style={{ marginBottom: '1rem' }}>
+                                    <a
+                                        href={`https://wa.me/?text=Here is my referral code: Motive50. Use it to get discounts!`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: '#2563EB', color: '#FFFFFF', textDecoration: 'none', borderRadius: '0.25rem' }}
+                                    >
+                                        Share on WhatsApp
+                                    </a>
+                                </div>
+                            <div>
+                                <Link href="/shop" className="axil-btn btn-bg-primary" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: '#2563EB', color: '#FFFFFF', textDecoration: 'none', borderRadius: '0.25rem' }}>
+                                    Back to shop
+                                </Link>
+                            </div>
                         </div>
+
+
 
                     }
                 </Section>
