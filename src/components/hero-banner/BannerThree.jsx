@@ -45,19 +45,45 @@ const BannerThree = () => {
                 </div>
               </div>
               <div className="col-lg-3">
-                <div className="slider-product-box">
-                  <div className="product-thumb">
-                    <Image 
-                    src={FashionSliderProduct.thumbnail}
-                    width={125}
-                    height={200}
-                    alt="Product"
-                    />
-                  </div>
-                  <h6 className="title">{FashionSliderProduct.title}</h6>
-                  <span className="price">{FashionSliderProduct.price}</span>
+  <div className="slider-product-box">
+    <div className="product-thumb">
+      <SlickSlider
+        className="axil-slick-dots"
+        slidesToShow={1}
+        arrows={false}
+        dots={true}
+      >
+        {FashionSliderProduct.map((data, index) => (
+          <div key={index}>
+            <div className="single-slide">
+              <div className="main-slider-content">
+                <div className="main-slider-thumb1">
+                  <Image 
+                    src={data.thumbnail}
+                    height={292}
+                    width={227}
+                    alt="slider Image"
+                    className="rounded-lg shadow-md"
+                  />
+                </div>
+                <span className="subtitle text-gray-600 text-sm mt-5">
+                  <i className={data.subIcon} /> {data.subTitle}
+                </span>
+                <h1 className="title text-xl font-bold mt-2 mb-3">{data.title}</h1>
+                <div className="shop-btn">
+                  <Link href="/shop" className="axil-btn text-white bg-blue-500 px-4 py-2 rounded-full inline-block">Shop Now <i className="fal fa-long-arrow-right ml-2" /></Link>
                 </div>
               </div>
+            </div>
+          </div>
+        ))}
+      </SlickSlider>
+    </div>
+    {/* <h6 className="title">{FashionSliderProduct.title}</h6>
+    <span className="price">{FashionSliderProduct.price}</span> */}
+  </div>
+</div>
+
             </div>
           </div>
         </div>

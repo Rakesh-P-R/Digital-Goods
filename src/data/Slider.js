@@ -48,12 +48,6 @@ const FashionSlider = [
     }
 ]
 
-const FashionSliderProduct = {
-    thumbnail: "/images/product/product-41.png",
-    title: "Yantiti Leather Bags",
-    price: "$29.99"
-
-}
 
 const JewellerySlider = {
     subtitle: "Hot Deal In Diamond",
@@ -62,7 +56,7 @@ const JewellerySlider = {
     text: "Casual line with short design in 100% suede Diamond"
 }
 
-const FurnitureSlider = [
+const FashionSliderProduct = [
     {
         subTitle: "Hot Deal In This Week",
         subIcon: "fas fa-fire",
@@ -83,4 +77,4 @@ const FurnitureSlider = [
     },
 ]
 
-export { ElectronicsSlider, NftSlider, FashionSlider, JewellerySlider, FurnitureSlider, FashionSliderProduct };
+export { ElectronicsSlider, NftSlider, FashionSlider, JewellerySlider,  FashionSliderProduct };
