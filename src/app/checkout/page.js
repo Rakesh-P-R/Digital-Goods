@@ -18,24 +18,7 @@ const Checkout = () => {
     const [openShippingForm, setopenShippingForm] = useState(false);
     const cartProducts = useSelector((state) => state.productData);
     const [purchased, setPurchased] = useState(0); 
-    const [referralCode, setReferralCode] = useState('');
-
-    // Function to generate a random alphanumeric string
-    const generateReferralCode = () => {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let result = '';
-        const charactersLength = characters.length;
-        for (let i = 0; i < 6; i++) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        }
-        return result;
-    };
-
-    useEffect(() => {
-        // Generate a referral code when the component mounts
-        const code = generateReferralCode();
-        setReferralCode(code);
-    }, []);
+    
 // State for tracking purchased items
 
     const handleCheckout = () => {
@@ -359,24 +342,14 @@ const Checkout = () => {
                         </form>
                     ) : ( 
                         <div className="text-center">
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', marginBottom: '1rem' }}>
-                                <h4 style={{ margin: '0.5rem 0' }}>Your Referral Code is</h4>
-                                <p style={{ color: '#1E40AF', fontWeight: 'bold', marginTop: '-5px' }}>{referralCode}</p>
-                            </div>
-
-                            <div style={{ marginBottom: '1rem' }}>
-                                <a
-                                    href={`https://wa.me/?text=Here is my referral code: ${referralCode}. Use it to get discounts!`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: '#2563EB', color: '#FFFFFF', textDecoration: 'none', borderRadius: '0.25rem' }}
-                                >
-                                    Share on WhatsApp
-                                </a>
+                             <div style={{ marginBottom: '1rem' }}>
+                               
+                                    Wait Here Loading
+                              
                             </div>
                             <div>
-                                <Link href="/shop" className="axil-btn btn-bg-primary" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: '#2563EB', color: '#FFFFFF', textDecoration: 'none', borderRadius: '0.25rem' }}>
-                                    Back to shop
+                                <Link href="/" className="axil-btn btn-bg-primary" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: '#2563EB', color: '#FFFFFF', textDecoration: 'none', borderRadius: '0.25rem' }}>
+                                    Back to Home
                                 </Link>
                             </div>
                         </div>
