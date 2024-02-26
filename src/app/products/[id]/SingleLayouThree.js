@@ -8,13 +8,17 @@ import SlickSlider from "@/components/elements/SlickSlider";
 import { discountPercentage, reviewAverage, slugify } from "@/utils";
 import { ProductReview } from "@/data/Comments";
 import ProductRating from "@/components/product/elements/ProductRating";
+import { useRouter } from 'next/navigation'
+import { removeCartItem, miniCartHandler } from "@/store/slices/productSlice";
 
 const SingleLayouThree = ({ singleData }) => {
     const findReview = ProductReview.filter((data) => slugify(data.productId) === slugify(singleData.id));
     const ratingNumber = reviewAverage(findReview);
     const getWishlist = useSelector((state) => state.productData.wishlistItems);
     const isWishlistAdded = getWishlist.filter((data) => data.id === singleData.id);
+    const getProducts = useSelector((state) => state.productData);
 
+     const router = useRouter();
     const [nav1, setNav1] = useState();
     const [nav2, setNav2] = useState();
     const [quantity, setquantity] = useState(1);
@@ -68,7 +72,10 @@ const SingleLayouThree = ({ singleData }) => {
         }
         return galleryPreview;
     }
-
+    const miniCartFooterBtnHandler = (data) => {
+        router.push(data);
+        dispatch(miniCartHandler(false));
+    }
     return (
         <section className="axil-single-product-area axil-section-gap pb--0">
             <div className="single-product-thumb mb--40">
@@ -169,6 +176,7 @@ const SingleLayouThree = ({ singleData }) => {
                                 </div>
                             </div>
                         </div>
+                        
                         <div className="col-lg-5 mb--40">
                             <div className="single-product-content">
                                 <div className="inner">
@@ -219,6 +227,7 @@ const SingleLayouThree = ({ singleData }) => {
                                             <span className="qtybtn" onClick={incrementQuantity}>+</span>
                                         </div>
                                         <ul className="product-action d-flex-center mb--0">
+                                            
                                             <li className="add-to-cart">
                                                 <button disabled={(singleData.colorAttribute && !colorImage) || (singleData.sizeAttribute && !productSize) ? true : false} onClick={() => handleAddToCart(singleData)} className="axil-btn btn-bg-primary">Add to Cart</button>
                                             </li>
@@ -230,6 +239,7 @@ const SingleLayouThree = ({ singleData }) => {
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
                 </div>
             </div>

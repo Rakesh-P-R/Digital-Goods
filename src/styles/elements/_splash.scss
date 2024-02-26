@@ -50,6 +50,7 @@
     .container-fluid {
         padding: 0;
     }
+    
     .inner {
         @media #{$large-mobile} {
             padding-top: 30px !important;

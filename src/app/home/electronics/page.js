@@ -19,18 +19,22 @@ import { mapInSlices, slugify } from "@/utils";
 import PosterTwo from "@/components/poster/PosterTwo";
 import BannerOne from "@/components/hero-banner/BannerOne";
 import CategoryElectronics from "@/components/category/CategoryElectronics";
+import BannerThree from "@/components/hero-banner/BannerThree";
+
 
 const HomeElectronics = () => {
     const pathname = usePathname();
     const split = pathname.split("/");
     const pageCategory = split[split.length - 1];
-    const electronicsProduct = ProductsData; // Remove filtering logic here
+    const electronicsProduct = ProductsData; 
     const exploreProduct = mapInSlices(electronicsProduct, 8);
+    
     
     return ( 
         <>
         <HeaderOne />
         <main className="main-wrapper">
+     
             <BannerOne />
             {/* <CategoryElectronics />
             <PosterOne singleAnimation/> */}
@@ -106,7 +110,9 @@ const HomeElectronics = () => {
                     ))}
 
                 </SlickSlider>
-
+            </Section>
+            <Section>
+            <BannerThree/>
             </Section>
             <Section pClass="axil-most-sold-product" borderBottom="pb--50">
                 <SectionTitle 

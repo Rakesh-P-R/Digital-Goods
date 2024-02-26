@@ -70,10 +70,10 @@ const OrderReceived = () => {
                                         <th>Note:</th>
                                         <th>{latestOrder.billingAddress.notes}</th>
                                     </tr>
-                                    <tr>
+                                    {/* <tr>
                                         <th>Refferal Code:</th>
                                         <th>Motive50</th>
-                                    </tr>
+                                    </tr> */}
                                 </tfoot>
                             </table>
 

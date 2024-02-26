@@ -38,7 +38,7 @@ const Cart = () => {
                     <div className="axil-product-cart-wrap">
                         <div className="product-table-heading">
                             <h4 className="title">Your Cart</h4>
-                            <button className="cart-clear" onClick={() => cartClearHandler()}>Clear Shoping Cart</button>
+                            {/* <button className="cart-clear" onClick={() => cartClearHandler()}>Clear Shoping Cart</button> */}
                         </div>
                         <div className="table-responsive">
                             <table className="table axil-product-table axil-cart-table mb--40">
@@ -97,7 +97,7 @@ const Cart = () => {
                         </div>
                         <div className="cart-update-btn-area">
                             <div className="input-group product-cupon">
-                                <input placeholder="Enter coupon code" type="text" />
+                                <input placeholder="Enter Refferal code" type="text" />
                                 <div className="product-cupon-btn">
                                     <button type="submit" className="axil-btn btn-outline">Apply</button>
                                 </div>

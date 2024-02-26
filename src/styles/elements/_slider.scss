@@ -315,7 +315,7 @@ Slider Style
 
 .main-slider-style-2 {
     .slider-offset-left {
-        margin-left: 290px;
+        // margin-left: 290px;
         margin-top: 40px;
         margin-bottom: 40px;
         @media #{$smlg-device} {
@@ -326,6 +326,7 @@ Slider Style
         background-color: #f7f7f7;
         border-radius: 6px;
         padding: 48px 50px;
+        width: 100%;
         @media #{$large-mobile} {
             padding: 40px 30px;
 
