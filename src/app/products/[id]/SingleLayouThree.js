@@ -9,16 +9,16 @@ import { discountPercentage, reviewAverage, slugify } from "@/utils";
 import { ProductReview } from "@/data/Comments";
 import ProductRating from "@/components/product/elements/ProductRating";
 import { useRouter } from 'next/navigation'
-import { removeCartItem, miniCartHandler } from "@/store/slices/productSlice";
+import { miniCartHandler } from "@/store/slices/productSlice";
+
 
 const SingleLayouThree = ({ singleData }) => {
     const findReview = ProductReview.filter((data) => slugify(data.productId) === slugify(singleData.id));
     const ratingNumber = reviewAverage(findReview);
     const getWishlist = useSelector((state) => state.productData.wishlistItems);
     const isWishlistAdded = getWishlist.filter((data) => data.id === singleData.id);
-    const getProducts = useSelector((state) => state.productData);
 
-     const router = useRouter();
+    const router = useRouter();
     const [nav1, setNav1] = useState();
     const [nav2, setNav2] = useState();
     const [quantity, setquantity] = useState(1);
@@ -27,18 +27,6 @@ const SingleLayouThree = ({ singleData }) => {
     const [fsToggler, setFsToggler] = useState(false);
 
     const dispatch = useDispatch();
-
-    const handleAddToCart = (cartAddedData) => {
-        let product = {...cartAddedData}
-        if (quantity > 0) {
-            product.cartQuantity = quantity;
-            product.productColor = colorImage.color;
-            product.productSize = productSize;
-            dispatch(addToCart(product));
-        }else {
-            alert("Please select minimum 1 quantity")
-        }
-    };
 
     const handleAddToWishlist = (product) => {
         dispatch(addToWishlist(product));
@@ -73,8 +61,9 @@ const SingleLayouThree = ({ singleData }) => {
         return galleryPreview;
     }
     const miniCartFooterBtnHandler = (data) => {
-        router.push(data);
-        dispatch(miniCartHandler(false));
+        dispatch(addToCart(singleData)); // Add the selected product to the cart
+        router.push(data); // Navigate to the checkout page
+        dispatch(miniCartHandler(false)); // Close the mini cart if needed
     }
     return (
         <section className="axil-single-product-area axil-section-gap pb--0">
@@ -229,7 +218,7 @@ const SingleLayouThree = ({ singleData }) => {
                                         <ul className="product-action d-flex-center mb--0">
                                             
                                             <li className="add-to-cart">
-                                                <button disabled={(singleData.colorAttribute && !colorImage) || (singleData.sizeAttribute && !productSize) ? true : false} onClick={() => handleAddToCart(singleData)} className="axil-btn btn-bg-primary">Add to Cart</button>
+                                                <button disabled={(singleData.colorAttribute && !colorImage) || (singleData.sizeAttribute && !productSize) ? true : false} onClick={() => miniCartFooterBtnHandler("/checkout")} className="axil-btn btn-bg-primary">Checkout</button>
                                             </li>
                                             <li className="wishlist">
                                                 {/* <button className="axil-btn wishlist-btn" onClick={() => handleAddToWishlist(singleData)}><i className={isWishlistAdded.length === 1 ? "fas fa-heart" : "far fa-heart"} /></button> */}

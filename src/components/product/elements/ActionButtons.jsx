@@ -29,15 +29,9 @@ const ActionButtons = (props) => {
 
   return (
     <ul className="cart-action">
-      {props.wishlistBtn && props.productAction.pCate !== "NFT" && (
-        <li className="wishlist">
-          <button onClick={() => handleAddToWishlist(props.productAction)}>
-		  {/* <i className={isWishlistAdded.length === 1 ? "fas fa-heart" : "far fa-heart"} /> */}
-          </button>
-        </li>
-      )}
+     
       {props.cartBtn && (
-        <li className="select-option">
+        <li className="select-option ">
           {props.productAction.pCate === "NFT" || props.productAction.productType === "variable" ? (
             <Link href={`/products/${props.productAction.id}`}>
               Buy Product

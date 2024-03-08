@@ -27,11 +27,8 @@ const ProductPrice = (props) => {
           fontSize: '10px',
         }}
       >
-        <div className="border border-gray-300 py-1 px-4 rounded-l-md bg-gray-100">
-          Purchased: {props.purchased}
-        </div>
         <div className="border border-gray-300 py-1 px-4 rounded-r-md bg-gray-100">
-          Participation: {props.participation}
+          Participance: {props.Participance}
         </div>
       </div>
     </div>
