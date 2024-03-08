@@ -16,10 +16,6 @@ const ActionButtons = (props) => {
     dispatch(addToCart(product));
   };
 
-  const handleAddToWishlist = (product) => {
-    dispatch(addToWishlist(product));
-  };
-
   const quickViewHandler = (product) => {
     dispatch(addToQuickView({
       viewItem: product,
@@ -37,9 +33,9 @@ const ActionButtons = (props) => {
               Buy Product
             </Link>
           ) : (
-            <button onClick={() => handleAddToCart(props.productAction)}>
-              Add to Cart
-            </button>
+            <Link href={`/products/${props.productAction.id}`}>
+            Buy Product
+          </Link>
           )}
         </li>
       )}
