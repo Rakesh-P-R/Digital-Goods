@@ -18,19 +18,11 @@ const ProductPrice = (props) => {
         {/* Ensure props.price is defined and has salePrice property */}
         {props.price && props.price.salePrice ? props.price.salePrice : (props.price && props.price.price)}
       </span>
-      <div
-        className="mt-2 justify-between"
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '2px',
-          fontSize: '10px',
-        }}
-      >
-        <div className="border border-gray-300 py-1 px-4 rounded-r-md bg-gray-100">
-          Participance: {props.Participance}
-        </div>
-      </div>
+      <div className="mt-2 flex justify-between items-center">
+            <div className="border border-gray-300 py-1 px-4 rounded-r-md bg-gray-100 text-xs" style={{fontSize:"10px"}}>
+              Participance:
+            </div>
+          </div>
     </div>
   );
 };

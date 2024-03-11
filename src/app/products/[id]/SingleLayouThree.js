@@ -16,7 +16,7 @@ const SingleLayouThree = ({ singleData }) => {
     const findReview = ProductReview.filter((data) => slugify(data.productId) === slugify(singleData.id));
     const ratingNumber = reviewAverage(findReview);
     const getWishlist = useSelector((state) => state.productData.wishlistItems);
-    const isWishlistAdded = getWishlist.filter((data) => data.id === singleData.id);
+    const cartProducts = useSelector(state => state.productData.cartItems);
 
     const router = useRouter();
     const [nav1, setNav1] = useState();
@@ -61,9 +61,12 @@ const SingleLayouThree = ({ singleData }) => {
         return galleryPreview;
     }
     const miniCartFooterBtnHandler = (data) => {
-        dispatch(addToCart(singleData)); // Add the selected product to the cart
-        router.push(data); // Navigate to the checkout page
-        dispatch(miniCartHandler(false)); // Close the mini cart if needed
+        const productInCart = cartProducts.find(item => item.id === singleData.id);
+        if (!productInCart) {
+            dispatch(addToCart(singleData));
+        }
+        router.push(data);
+        dispatch(miniCartHandler(false));
     }
     return (
         <section className="axil-single-product-area axil-section-gap pb--0">

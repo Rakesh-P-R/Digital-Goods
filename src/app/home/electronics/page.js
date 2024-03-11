@@ -106,7 +106,8 @@ const HomeElectronics = () => {
                   ]}
                 >
                     {electronicsProduct.map((data) => (
-                        <ProductTwo product={data} key={data.id}/>
+                        <ProductTwo product={data} key={data.id}
+                        />  
                     ))}
 
                 </SlickSlider>

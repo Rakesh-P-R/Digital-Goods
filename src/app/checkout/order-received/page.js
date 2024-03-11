@@ -10,7 +10,6 @@ const OrderReceived = () => {
     const latestOrder = orders[orders.length - 1];
     const [referralCode, setReferralCode] = useState('');
 
-    // Function to generate a random alphanumeric string
     const generateReferralCode = () => {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let result = '';
@@ -20,9 +19,8 @@ const OrderReceived = () => {
         }
         return result;
     };
-
+    
     useEffect(() => {
-        // Generate a referral code when the component mounts
         const code = generateReferralCode();
         setReferralCode(code);
     }, []);

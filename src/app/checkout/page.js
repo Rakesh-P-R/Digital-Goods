@@ -169,7 +169,15 @@ const Checkout = () => {
                                                     </label>
                                                     <input type="email" {...register('email', { required: true })} />
                                                     {errors.email && <p className="error">Email is required.</p>}
-                                                </div>
+                                                </div> 
+                                            </div>
+                                            <div className="col-lg-12">
+                                                <div className="form-group">
+                                                    <label>
+                                                        Reffaral Code <span>*</span>
+                                                    </label>
+                                                    <input type="text" />
+                                                </div> 
                                             </div>
                                             <div className="col-lg-12">
                                                 <div className="form-group input-group">
